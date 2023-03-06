@@ -46,39 +46,64 @@ class _RegisterPageState extends State<RegisterPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Registration User "),
-        centerTitle: true,
-      ),
-      body: Padding(
-        padding: EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            Text("Welcome to Our App !"),
-            SizedBox(height: 30) ,
-            MyTextField(
-              controller: usernameController,
-              hintText: 'Name',
-              obscureText: false,
-            ),
-            SizedBox(height: 30,),
-            MyTextField(controller: emailController, hintText: 'Email Id', obscureText: false),
-            SizedBox(height: 30,),
-            MyTextField(controller: passwordController, hintText: 'Password', obscureText: false),
-            SizedBox(height: 30,),
-            MyButton(
-              onTap: () {
-                registerUsingEmailPassword(
-                    name: '${usernameController.text}',
-                    email: '${emailController.text}',
-                    password: '${passwordController.text}'
-                ) ;
-              }
-            ),
-          ],
+    return Center(
+      child: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/agri2.png'),
+            fit: BoxFit.cover,
+            opacity: 0.8,
+          ) ,
         ),
-      ),
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          // appBar: AppBar(
+          //   title: Text("Registration User "),
+          //   centerTitle: true,
+          // ),
+          body: Padding(
+              padding: EdgeInsets.all(20.0),
+
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    SizedBox(height: 200,),
+                    Text(
+                        "! Welcome to My Farm !",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 40,
+                        fontFamily: 'Estonia'
+                      ),
+                    ),
+                    SizedBox(height: 30) ,
+                    MyTextField(
+                      controller: usernameController,
+                      hintText: 'Name',
+                      obscureText: false,
+                    ),
+                    SizedBox(height: 30,),
+                    MyTextField(controller: emailController, hintText: 'Email Id', obscureText: false),
+                    SizedBox(height: 30,),
+                    MyTextField(controller: passwordController, hintText: 'Password', obscureText: false),
+                    SizedBox(height: 30,),
+                    MyButton(
+                      onTap: () {
+                        registerUsingEmailPassword(
+                            name: '${usernameController.text}',
+                            email: '${emailController.text}',
+                            password: '${passwordController.text}'
+                        ) ;
+                      }
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
     );
+    
   }
 }

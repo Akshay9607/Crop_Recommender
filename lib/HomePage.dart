@@ -22,7 +22,6 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () { FirebaseAuth.instance.signOut() ; },
                 child: Text("Sign out"),
               ),
-
             ],
           ),
 

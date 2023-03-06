@@ -110,9 +110,6 @@ class _WelcomeViewState extends State<WelcomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Welcome to home !"),
-      ),
       body: StreamBuilder<User?>(
       stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context , snapshot){
